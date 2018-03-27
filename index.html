@@ -12,41 +12,52 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style/modules.css" />
         
     <script id="book-list-template" type="text/x-handlebars-template">
-        <li>{{author}}: {{title}}</li>
-    </script>
+        <h1>{{title}}</h1>
+        <h2>{{author}}</h2>
+    </script> 
     <script id="error-template" type="text/x-handlebars-template">
         <p>{{err.statusText}}</p>
     </script>   
+     
 </head>
+
 <body>
-    <header>
-        <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200" />
-        <h1>Books App</h1>
-        <nav>
-            <ul>
-                <li><a href=# class="">my books</a></li>
-                <li><a href=# class="">about</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <sections>
-            <ul class="bookInfo">
-            </ul>
-            <dt>Total Books:</dt>
-                <dd class="books"></dd>
-        </sections>
-        <section>
-            <h1>Us</h1>
-            <p>About our application</p>
-        </section>
-    </main>
-    <footer>
+  <header>
+    <section id="site-header">
+      <img>
+      <h1>Books App</h1>
+    </section>
+    <nav>
       <ul>
-        <li><a href="http://github.com/" target="_blank" class="icon-github"></a></li>
-        <li><a href="http://linkedin.com/" target="_blank" class="icon-linkedin"></a></li>
+          <li><a href=# class="">my books</a></li>
+          <li><a href=# class="">about</a></li>
       </ul>
-    </footer>
+    </nav>
+  </header>
+
+    <main>
+      <section id="book-count">
+        <dt>Total Books:</dt>
+          <dd class="books"></dd>
+      </section>
+      <section id="book-view" class="container">
+        <article class="book-list">
+          <img>
+          <header></header>
+        </article>
+      </section>
+      <section id="about-view" class="container">
+        <h2>Us</h2>
+        <p>About our application</p>
+      </section>
+    </main>
+
+  <footer>
+    <ul>
+      <li><a href="http://github.com/" target="_blank" class="icon-github"></a></li>
+      <li><a href="http://linkedin.com/" target="_blank" class="icon-linkedin"></a></li>
+    </ul>
+  </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
