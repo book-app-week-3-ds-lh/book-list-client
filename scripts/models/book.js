@@ -26,12 +26,29 @@ var app = app || {};
   };
 
   Book.fetchAll = callback => {
-    $.getJSON('http://localhost:3000/api/v1/books')
+    $.get('http://localhost:3000/api/v1/books')
       .then(results => {
         Book.loadAll(results);
         callback();
       })
-      .catch(app.errorView.initErrorPage);
+      .catch(app.errorView.init);
+  };
+
+  Book.fetchOne = (ctx, callback) => {
+    $.get(`http://localhost:3000/api/v1/books/${ctx.paramas.book_id}`)
+      .then(results => {
+        Book.loadAll(results);
+        callback(ctx);
+      })
+      .catch(app.errorView.init);
+  }
+
+  Book.prototype.create = function(callback) {
+    $.post('http://localhost:3000/api/v1/books', {title: this.title, author: this.author, image_url: this.image_url, isbn: this.isbn, description: this.description})
+      .then(data => {
+        console.log(data);
+        if(callback) callback();
+      })
   };
 
   module.Book = Book;

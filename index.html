@@ -16,8 +16,15 @@
         <h2>{{author}}</h2>
         <img src="{{image_url}}"></img>
     </script> 
+    <script id="detail-view-template" type="text/x-handlebars-template">
+      <h1>{{title}}</h1>
+      <h2>{{author}}</h2>
+      <img src="{{image_url}}"></img>
+      <p>{{isbn}}</p>
+      <p>{{description}}</p>
+  </script>
     <script id="error-template" type="text/x-handlebars-template">
-        <p id="error-message">{{err.statusText}}</p>
+        <p id="error-message" class="errorView">{{err.statusText}}</p>
     </script>   
      
 </head>
@@ -50,6 +57,14 @@
         <h2>Us</h2>
         <p>About our application</p>
       </section>
+      <section id="detail-view" class="container">
+        <article class="one-book">
+          <header></header>
+        </article>
+      </section>
+      <section id="form-view" class="container">
+
+      </section>
     </main>
 
   <footer>
@@ -60,12 +75,14 @@
   </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>
     <script>
-        $(app.Book.fetchAll(app.bookView.initIndexPage));
+        $(app.Book.fetchAll(app.bookView.init));
+        // $(app.Book.fetchAll(app.detailView.init));
     </script>
 </body>
 </html>
