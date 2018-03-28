@@ -1,7 +1,7 @@
 'use strict';
 
 var app = app || {};
-$.getJSON('http://localhost:3000/api/v1/books').then( results => console.log(results));
+// $.getJSON('http://localhost:3000/api/v1/books').then( results => console.log(results));
 
 (function(module){
 
@@ -14,7 +14,7 @@ $.getJSON('http://localhost:3000/api/v1/books').then( results => console.log(res
 
   Book.all = [];
 
-  Book.prototype.toHTML = function() {
+  Book.prototype.toHtml = function() {
     let template = Handlebars.compile($('#book-list-template').text());
     return template(this);
   };

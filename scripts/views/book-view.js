@@ -8,8 +8,8 @@ var app = app || {};
 
   bookView.initIndexPage= () => {
     $('.container').hide();
-    $('.book-count').show();
-    $('.book-view').fadeIn('slow');
+    $('#book-count').show();
+    $('#book-view').fadeIn('slow');
     app.Book.all.map(book => $('.book-list').append(book.toHtml()));
   };
 
