@@ -12,17 +12,20 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/modules.css" />
     
     <script id="book-list-template" type="text/x-handlebars-template">
-        <h1>{{title}}</h1>
-        <h2>{{author}}</h2>
-        <img src="{{image_url}}"></img>
+      <img src="{{image_url}}"></img>
+      <h1>{{title}}</h1>
+      <h2>{{author}}</h2>
+      <button type="button" id="details-button"><a href="/books/{{book_id}}">View Details</a></button>
     </script> 
+
     <script id="detail-view-template" type="text/x-handlebars-template">
       <h1>{{title}}</h1>
       <h2>{{author}}</h2>
       <img src="{{image_url}}"></img>
       <p>{{isbn}}</p>
       <p>{{description}}</p>
-  </script>
+    </script>
+
     <script id="error-template" type="text/x-handlebars-template">
         <p id="error-message" class="errorView">{{err.statusText}}</p>
     </script>   
@@ -38,9 +41,9 @@
     </section>
     <nav>
       <ul>
-          <li><a href=# class="">my books</a></li>
-          <li><a href=# class="">about</a></li>
-          <li><a href="/books/new" class="">New Book</a></li>
+          <li><a href="/" class="">View All Books</a></li>
+          <!-- <li><a href="/about" class="">About Us</a></li> -->
+          <li><a href="/books/new" class="">Add A New Book</a></li>
       </ul>
     </nav>
   </header>
@@ -50,22 +53,26 @@
         <dt>Total Books:</dt>
           <dd class="books"></dd>
       </section>
+
       <section id="book-view" class="container">
         <article class="book-list">
           <header></header>
         </article>
       </section>
+
       <section id="about-view" class="container">
         <h2>Us</h2>
         <p>About our application</p>
       </section>
+
       <section id="detail-view" class="container">
         <article class="one-book">
           <header></header>
         </article>
       </section>
+
       <section id="form-view" class="container">
-        <h1>Add a New Form</h1>
+        <h1>Add A New Book</h1>
         <form action="#" id="new-form">
           <label>
             <input type="text" id="book-title" placeholder="title" required>
