@@ -1,4 +1,91 @@
+* {
+    font-family: 'Cinzel', serif;
+}
+
+body {
+    background-color: #90aebb;
+}
+
 a {
     text-decoration: none;
     color: #777;
+}
+
+img {
+    width: 80%;
+    border: 0.2em groove #cf6766;
+    margin-top: 0.2em;
+}
+
+/*////////////////HEADER////////////////////*/
+
+#site-header {
+    background-color: #cf6766;
+    height: 150px;
+    text-align: center;
+    line-height: 100%;
+}
+
+#site-header h1 {
+    font-size: 4em;
+    color: white;
+    font-family: 'Ultra', serif;
+    padding-top: 0.5em;
+}
+
+/*////////////////MENU & NAV////////////////////*/
+
+.icon-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3em; 
+}
+.icon-menu:hover ~ .main-nav ul {
+display: block;
+}
+
+.main-nav {
+    padding: 0.1em;
+    background-color: #31405d;
+}
+.main-nav ul {
+    display: none;
+    padding: 0;
+    list-style: none;
+    clear: both;
+}
+.main-nav:hover ul {
+    display: block;
+}
+
+.main-nav ul li:hover a {
+    color: #29506D;
+}
+.main-nav li {
+margin-right: .4em;
+font-size: 1.5em;
+padding: .5em .2em;
+border-bottom: 1px solid #ccc;
+}
+
+/*////////////////BODY////////////////////*/
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer {
+    background-color: #cf6766;
+    height: 150px;
+    line-height: 100%;
+    font-size: 2em; 
+    padding-top: 0.5em;
+}
+
+footer ul li{
+    display: inline;
 }

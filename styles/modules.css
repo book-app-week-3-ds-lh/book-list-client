@@ -1,7 +1,70 @@
-#site-header {
-    background: blue;
+/*////////////////BOOK VIEW////////////////////*/
+#book-count {
+    font-size: 2em;
 }
 
-@media only screen and (min-width: 640px) {
-    
+.book-list {
+    clear:both;
+    width: 80%;
+}
+
+.book-wrapper {
+    border: 0.5em groove black;
+    max-width: 670px;
+    font-size: 2em;
+    margin: 1em;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #31405d;
+    color: #fdfdfd;
+}
+
+.book-wrapper h1 {
+    margin: 0.2em;
+}
+
+.book-wrapper h2 {
+    margin: 0.2em;
+    font-size: 0.7em;
+}
+
+.book-wrapper button{
+    font-size: 1em;
+    margin: 0.5em;
+}
+
+.book-wrapper button:hover a {
+    color: #29506D;
+}
+
+/*////////////////DETAIL VIEW////////////////////*/
+
+.detail-view {
+    text-align: center;
+}
+
+.one-book h1 {
+    font-size: 3em;
+    margin-top: 0.5em;
+}
+
+.one-book h2 {
+    font-size: 1.2em;
+    margin: 1em;
+}
+
+.detail-view-images {
+    display: block;
+    margin: 0 auto;
+}
+
+.one-book small {
+    font-size: 1.2em;
+    text-decoration: underline;
+    margin-top: 2em;
+}
+
+.one-book p {
+    font-size: 2em;
+    margin: 1em 0em;
 }

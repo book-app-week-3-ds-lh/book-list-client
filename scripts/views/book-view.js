@@ -8,9 +8,10 @@ var app = app || {};
 
   bookView.init = () => {
     $('.container').hide();
-    $('#book-count').show();
+    $('.book-list').empty();
     $('#book-view').fadeIn('slow');
     app.Book.all.map(book => $('.book-list').append(book.toHtml()));
+    $('#book-count .totalBooks').text(app.Book.bookCount());
   };
 
   module.bookView = bookView;
