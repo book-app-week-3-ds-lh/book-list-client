@@ -4,7 +4,7 @@ var app = app || {};
 
 (function(module){
 
-  let API_URL = 'https://lh-ds-booklist.herokuapp.com';
+  // let API_URL = 'https://lh-ds-booklist.herokuapp.com';
 
   function Book(bookDataObj) {
     Object.keys(bookDataObj).forEach(key => {
@@ -44,12 +44,14 @@ var app = app || {};
       .catch(app.errorView.init);
   }
 
-  Book.prototype.create = function(callback) {
-    $.post('http://localhost:3000/api/v1/books/new', {title: this.title, author: this.author, image_url: this.image_url, isbn: this.isbn, description: this.description})
+  Book.prototype.insertRecord = function(callback) {
+    console.log('sup');
+    $.post('http://localhost:3000/api/v1/books', {title: this.title, author: this.author, image_url: this.image_url, isbn: this.isbn, description: this.description})
       .then(data => {
         console.log(data);
         if(callback) callback();
-      })
+      });
+      debugger;
   };
 
   module.Book = Book;
