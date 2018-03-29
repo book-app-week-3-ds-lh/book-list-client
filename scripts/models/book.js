@@ -35,6 +35,10 @@ var app = app || {};
       .catch(app.errorView.init);
   };
 
+  Book.bookCount = () => {
+    return Book.all.length;
+  };
+
   Book.fetchOne = (ctx, callback) => {
     $.get(`http://localhost:3000/api/v1/books/${ctx.params.book_id}`)
       .then(results => {
@@ -45,13 +49,11 @@ var app = app || {};
   }
 
   Book.prototype.insertRecord = function(callback) {
-    console.log('sup');
     $.post('http://localhost:3000/api/v1/books', {title: this.title, author: this.author, image_url: this.image_url, isbn: this.isbn, description: this.description})
       .then(data => {
         console.log(data);
         if(callback) callback();
       });
-      debugger;
   };
 
   module.Book = Book;

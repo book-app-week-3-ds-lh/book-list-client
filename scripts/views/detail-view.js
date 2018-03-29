@@ -8,9 +8,11 @@ var app = app || {};
 
   detailView.init= (ctx) => {
     $('.container').hide();
-    $('#detail-view').fadeIn('slow');
+    let template = Handlebars.compile($('#detail-view-template').text());
     let selected = app.Book.all.filter(el => el.book_id = ctx.params.book_id);
-    $('.one-book').append(selected[0].toHtml());
+    console.log(selected);
+    selected.forEach(x => $('.one-book').append(template(x)));
+    $('#detail-view').fadeIn('slow');
   };
 
   module.detailView = detailView;

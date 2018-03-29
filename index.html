@@ -8,21 +8,25 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/icons.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/base.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/modules.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/layout.css" />
+    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/b7f2b16842/UntitledProject/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Ultra" rel="stylesheet">
     
     <script id="book-list-template" type="text/x-handlebars-template">
-      <img src="{{image_url}}"></img>
-      <h1>{{title}}</h1>
-      <h2>{{author}}</h2>
-      <button type="button" id="details-button"><a href="/books/{{book_id}}">View Details</a></button>
+        <div class="book-wrapper">
+            <h1>{{title}}</h1>
+            <img src="{{image_url}}"></img>
+            <h2>{{author}}</h2>
+            <button type="button" id="details-button"><a href="/books/{{book_id}}">View Details</a></button>
+        </div>
     </script> 
 
     <script id="detail-view-template" type="text/x-handlebars-template">
       <h1>{{title}}</h1>
       <h2>{{author}}</h2>
-      <img src="{{image_url}}"></img>
-      <p>{{isbn}}</p>
+      <img class="detail-view-images" src="{{image_url}}"></img>
+      <small>{{isbn}}</small>
       <p>{{description}}</p>
     </script>
 
@@ -39,7 +43,8 @@
       <img>
       <h1>Books App</h1>
     </section>
-    <nav>
+    <div class="icon-menu"></div>
+    <nav class="main-nav">
       <ul>
           <li><a href="/" class="">View All Books</a></li>
           <!-- <li><a href="/about" class="">About Us</a></li> -->
@@ -49,15 +54,14 @@
   </header>
 
     <main>
-      <section id="book-count">
-        <dt>Total Books:</dt>
-          <dd class="books"></dd>
-      </section>
-
-      <section id="book-view" class="container">
-        <article class="book-list">
-          <header></header>
-        </article>
+        
+        <section id="book-view" class="container">
+            <section id="book-count">
+              <dt>Total Books:<dd class="totalBooks"></dd></dt>
+            </section>
+            <article class="book-list">
+                <header></header>
+            </article>
       </section>
 
       <section id="about-view" class="container">
