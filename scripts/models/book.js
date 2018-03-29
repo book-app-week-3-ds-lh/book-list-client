@@ -56,5 +56,35 @@ var app = app || {};
       });
   };
 
+  Book.prototype.deleteRecord = function(ctx, callback) {
+    console.log(ctx);
+    // debugger;
+    $.ajax({
+      url: `/http://localhost:3000/api/v1/books/${ctx.params.book_id}`,
+      method: 'DELETE'
+    })
+      .then(console.log)
+      .then(callback);
+  };
+
+  Book.prototype.updateRecord = book_id => {
+    console.log(book_id);
+    debugger;
+    $.ajax({
+      url: `/http://localhost:3000/api/v1/books/${book_id}`,
+      method: 'PUT',
+      data: {
+        title: this.title,
+        author: this.author,
+        isbn: this.isbn,
+        image_url: this.image_url,
+        description: this.description,
+        book_id: this.book_id
+      }
+    })
+      .then(app.bookView.init)
+      .catch(app.errorView.init);
+  };
+
   module.Book = Book;
 })(app);

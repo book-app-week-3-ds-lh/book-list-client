@@ -14,5 +14,7 @@ var app = app || {};
     $('#detail-view').fadeIn('slow');
   };
 
+  $('#delete-button').on('click', app.Book.deleteRecord);
+
   module.detailView = detailView;
 }(app));
