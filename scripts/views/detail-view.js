@@ -6,10 +6,10 @@ var app = app || {};
 
   let detailView = {};
 
-  detailView.init= () => {
+  detailView.init= (ctx) => {
     $('.container').hide();
     $('#detail-view').fadeIn('slow');
-    let selected = Book.all.filter(el => el.book_id = ctx.params.book_id);
+    let selected = app.Book.all.filter(el => el.book_id = ctx.params.book_id);
     $('.one-book').append(selected[0].toHtml());
   };
 
