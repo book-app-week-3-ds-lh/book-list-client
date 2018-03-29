@@ -1,7 +1,6 @@
 'use strict';
 
 var app = app || {};
-// $.getJSON('http://localhost:3000/api/v1/books').then( results => console.log(results));
 
 (function(module){
 
@@ -37,7 +36,7 @@ var app = app || {};
   };
 
   Book.fetchOne = (ctx, callback) => {
-    $.get(`http://localhost:3000/api/v1/books/${ctx.paramas.book_id}`)
+    $.get(`http://localhost:3000/api/v1/books/${ctx.params.book_id}`)
       .then(results => {
         Book.loadAll(results);
         callback(ctx);
@@ -46,7 +45,7 @@ var app = app || {};
   }
 
   Book.prototype.create = function(callback) {
-    $.post('http://localhost:3000/api/v1/books', {title: this.title, author: this.author, image_url: this.image_url, isbn: this.isbn, description: this.description})
+    $.post('http://localhost:3000/api/v1/books/new', {title: this.title, author: this.author, image_url: this.image_url, isbn: this.isbn, description: this.description})
       .then(data => {
         console.log(data);
         if(callback) callback();
