@@ -89,3 +89,7 @@ footer {
 footer ul li{
     display: inline;
 }
+
+textarea {
+    overflow: scroll;
+}

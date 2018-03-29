@@ -25,10 +25,34 @@
     <script id="detail-view-template" type="text/x-handlebars-template">
       <h1>{{title}}</h1>
       <h2>{{author}}</h2>
-      <img class="detail-view-images" src="{{image_url}}"></img>
       <small>{{isbn}}</small>
+      <img class="detail-view-images" src="{{image_url}}"></img>
       <p>{{description}}</p>
-    </script>
+      <div class="buttonWrapper">
+        <button type="button" data-id="/books/{{book_id}}" id="updateView-button"><a href="/books/updateView/{{book_id}}">Update</a></button>
+        <button type="button" data-id="/books/{{book_id}}" id="delete-button"><a href="/">Delete</a></button>
+    	</div>
+		</script>
+		
+		<script id="update-view-template" type="text/x-handlebars-template">
+				<h1>Update: {{title}}</h1>
+					<form action="#" id="new-update">
+						<label>
+							<input type="text" id="book-title" value={{title}} required>
+						</label>
+						<label>
+							<input type="text" id="book-author" value={{author}} required>
+						</label>
+						<label>
+							<input type="text" id="book-isbn" value={{isbn}} required>
+						</label>
+						<label>
+							<input type="text" id="book-image-url" value={{image_url}} required>
+						</label>
+						<textarea id="book-description" rows="8" cols="40" value={{description}} required></textarea>
+						<button type="submit" id="update-button">Update</button>
+					</form>
+		</script>
 
     <script id="error-template" type="text/x-handlebars-template">
         <p id="error-message" class="errorView">{{err.statusText}}</p>
@@ -93,7 +117,10 @@
           <textarea id="book-description" rows="8" cols="40" placeholder="description..." required></textarea>
           <button type="submit" id="submit-button">Submit</button>
         </form>
-      </section>
+			</section>
+			
+			<section id="update-view" class="container"></section>
+
     </main>
 
   <footer>
@@ -110,10 +137,8 @@
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>
     <script src="scripts/views/form-view.js"></script>
-    <script src="scripts/views/detail-view.js"></script>
+		<script src="scripts/views/detail-view.js"></script>
+		<script src="scripts/views/update-view.js"></script>
     <script src="scripts/controllers/routes.js"></script>
-    <script>
-        $(app.Book.fetchAll(app.bookView.init));
-    </script>
 </body>
 </html>
