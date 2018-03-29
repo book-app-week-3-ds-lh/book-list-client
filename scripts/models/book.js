@@ -5,6 +5,7 @@ var app = app || {};
 
 (function(module){
 
+  let API_URL = 'https://lh-ds-booklist.herokuapp.com';
 
   function Book(bookDataObj) {
     Object.keys(bookDataObj).forEach(key => {
@@ -27,6 +28,7 @@ var app = app || {};
 
   Book.fetchAll = callback => {
     $.get('http://localhost:3000/api/v1/books')
+
       .then(results => {
         Book.loadAll(results);
         callback();
