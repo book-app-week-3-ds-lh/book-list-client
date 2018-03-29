@@ -6,7 +6,7 @@ var app = app || {};
 
   let bookView = {};
 
-  bookView.initIndexPage= () => {
+  bookView.init = () => {
     $('.container').hide();
     $('#book-count').show();
     $('#book-view').fadeIn('slow');
