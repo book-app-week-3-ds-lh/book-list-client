@@ -9,7 +9,8 @@ var app = app || {};
   formView.init= () => {
     $('.container').hide();
     $('#form-view').fadeIn('slow');
-    app.Book.all.map(book => $('#new-form').append(book.toHtml()));
+    console.log('Inited')
+    // app.Book.all.map(book => $('#new-form').append(book.toHtml()));
   };
 
   module.formView = formView;

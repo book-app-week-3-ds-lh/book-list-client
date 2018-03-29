@@ -5,8 +5,8 @@ if(window.location.pathname !== '/') {
 }
 
 page('/', app.bookView.init);
-page('/about', app.aboutView.init);
-page('/books/:book_id', ctx => Book.fetchOne(ctx, app.detailView.init));
-page('/books/new', app.formView.init);
+// page('/about', app.aboutView.init);
+page('/books/new', ctx => app.formView.init(ctx));
+page('/books/:book_id', ctx => app.Book.fetchOne(ctx, app.detailView.init));
 
 page();
